@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Verify that GD is installed
+RUN php -m | grep -i '^gd$'
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
