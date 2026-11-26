@@ -42,7 +42,7 @@ class AccessCodeController extends Controller
 
         $rsvp = Rsvp::create([
             'name'         => $request->name,
-            'email'        => $request->email ?? '',
+            'email'        => $request->email ?: null,
             'phone'        => '',
             'guests'       => $request->guests,
             'attendance'   => 'in-person',
